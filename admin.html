@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navaja Real - Agenda diaria</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="admin">
+  <header class="topbar">
+    <div class="topbar__content">
+      <h1>Agenda diaria - Navaja Real</h1>
+      <a class="topbar__link" href="index.html">← Volver al sitio</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="section__content">
+      <form id="admin-filters" class="filters">
+        <label class="field">
+          <span>Fecha</span>
+          <input type="date" id="admin-date" required />
+        </label>
+        <button type="button" id="today-button" class="btn-secondary">Hoy</button>
+      </form>
+
+      <section class="card">
+        <header class="card__header">
+          <h2>Turnos del día</h2>
+          <p id="admin-summary" class="card__subtitle"></p>
+        </header>
+        <div id="admin-bookings" class="card__body card__body--list" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
