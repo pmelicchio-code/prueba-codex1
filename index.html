@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navaja Real - Reserva tu turno</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1>Navaja Real</h1>
+      <p>Reservá tu turno y viví la experiencia de una barbería premium.</p>
+      <a class="hero__cta" href="#reserva">Reservar turno</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="reserva" class="section">
+      <h2>Reservá tu turno</h2>
+      <p class="section__intro">Seleccioná el día y horario de tu preferencia. Los turnos están disponibles de lunes a viernes, de 10:00 a 19:00 hs (descanso de 13:00 a 14:00 hs).</p>
+
+      <form id="booking-form" class="card">
+        <div class="form-grid">
+          <label class="field">
+            <span>Fecha</span>
+            <input type="date" id="date" name="date" required />
+          </label>
+
+          <label class="field">
+            <span>Horario</span>
+            <select id="time" name="time" required>
+              <option value="" disabled selected>Seleccioná un horario</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Servicio</span>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Seleccioná un servicio</option>
+              <option value="Corte">Corte</option>
+              <option value="Barba">Barba</option>
+              <option value="Corte y Barba">Corte y Barba</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Nombre y Apellido</span>
+            <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required />
+          </label>
+
+          <label class="field">
+            <span>Teléfono</span>
+            <input type="tel" id="phone" name="phone" placeholder="Ej. 11 2345 6789" required />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="email" name="email" placeholder="Ej. juan@mail.com" required />
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary">Confirmar reserva</button>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section section--secondary">
+      <div class="section__content">
+        <h2>¿Cómo funciona?</h2>
+        <ul class="steps">
+          <li><span class="steps__number">1</span> Elegí el día disponible de lunes a viernes.</li>
+          <li><span class="steps__number">2</span> Seleccioná el horario que mejor se ajuste a tu agenda.</li>
+          <li><span class="steps__number">3</span> Completá tus datos y el servicio que necesitás.</li>
+          <li><span class="steps__number">4</span> ¡Listo! Te enviaremos la confirmación a tu correo.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__content section__content--split">
+        <div>
+          <h2>Turnos ya reservados</h2>
+          <p class="section__intro">Consultá los turnos que ya se registraron para tu día seleccionado. Si el horario no figura, significa que está disponible.</p>
+          <div id="bookings-list" class="card card--list" aria-live="polite"></div>
+        </div>
+        <aside class="note">
+          <h3>¿Sos el barbero?</h3>
+          <p>Ingresá a la <a href="admin.html">agenda diaria</a> para ver los turnos detallados por fecha.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="current-year"></span> Navaja Real. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
